@@ -7,13 +7,14 @@ class Utils():
 
     @pytest.fixture(scope='session')
     def pre_and_post_activities(self):
-        print("*****************Pre and POST******************")
+
         self.load_ConfigFile()
         yield
 
     @allure.step("Loading Config file")
     def load_ConfigFile(self):
         cnfFilepath=str(os.getcwd())[0:str(os.getcwd()).rfind("\\")]+"\\Configuration\\Environment.cnf"
+        print(cnfFilepath)
         print("ConfigFilePth......"+str(os.path.exists(cnfFilepath)))
         global config
         config=ConfigParser()
