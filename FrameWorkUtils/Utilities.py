@@ -14,7 +14,7 @@ class Utils():
     @allure.step("Loading Config file")
     def load_ConfigFile(self):
         cnfFilepath=str(os.getcwd())[0:str(os.getcwd()).rfind("\\")]+"\\Configuration\\Environment.cnf"
-        print("Test file......"+str(os.path.exists(cnfFilepath)))
+        print("ConfigFilePth......"+str(os.path.exists(cnfFilepath)))
         global config
         config=ConfigParser()
         config.read(cnfFilepath)
