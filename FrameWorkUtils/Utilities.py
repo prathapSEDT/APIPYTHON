@@ -13,10 +13,12 @@ class Utils():
 
     @allure.step("Loading Config file")
     def load_ConfigFile(self):
-        print(os.getcwd())
+        print("File path Exist+"+str(os.path.exists(os.getcwd()+"\\Configuration\\Environment.cnf")))
+        file=os.getcwd()+"\\Configuration\\Environment.cnf"
         global config
         config=ConfigParser()
-        config.read("../Environment.cnf")
+        #config.read("../Environment.cnf")
+        config.read(file)
         print("**********Reading config file***************")
     @allure.step("Get Data from the section : {0} for the field : {1} from the config file")
     def getConfigData(self,section,property):
